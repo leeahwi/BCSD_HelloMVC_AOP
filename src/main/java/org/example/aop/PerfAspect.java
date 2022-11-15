@@ -19,7 +19,7 @@ public class PerfAspect {
 
         long afterTime = System.currentTimeMillis();
 
-        System.out.println(String.format("%s method execute time( ms ) : %d",
+        System.out.println(String.format("%s method execute time(ms) : %d",
                 joinPoint.getSignature().toShortString(), afterTime - beforeTime));
     }
 }
