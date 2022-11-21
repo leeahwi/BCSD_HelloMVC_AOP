@@ -1,4 +1,4 @@
-package org.example.domain;
+package org.example.domain.student;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -13,7 +13,6 @@ public class Student {
     public Student(Long id){
         this.id = id;
     }
-
     public Student(){
 
     }

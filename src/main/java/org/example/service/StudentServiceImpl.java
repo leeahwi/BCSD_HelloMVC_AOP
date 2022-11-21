@@ -1,6 +1,6 @@
 package org.example.service;
 
-import org.example.domain.Student;
+import org.example.domain.student.Student;
 
 import org.example.repository.StudentMapper;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,6 +1,6 @@
 package org.example.repository;
 
-import org.example.domain.Student;
+import org.example.domain.student.Student;
 import org.springframework.stereotype.Repository;
 
 @Repository
