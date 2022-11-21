@@ -10,7 +10,7 @@
 <head>
     <title>hello</title>
 </head>
-<body>
-hello.jsp
-</body>
+    <body>
+        hello.jsp
+    </body>
 </html>

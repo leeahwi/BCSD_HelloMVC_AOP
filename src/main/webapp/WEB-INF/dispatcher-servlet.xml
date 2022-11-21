@@ -14,6 +14,8 @@
     <context:component-scan base-package="org.example.config"/>
     <context:component-scan base-package="org.example.aop"/>
     <context:component-scan base-package="org.example.controller" />
+
+
 <!--    <aop:aspectj-autoproxy/>-->
 
 
