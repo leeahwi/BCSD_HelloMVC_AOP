@@ -11,7 +11,7 @@ import java.util.Optional;
 @Repository
 public interface UserRepository {
 
-    Posts getUserById(Long id);
+    User getUserById(Long id);
 
     void create(User user);
 

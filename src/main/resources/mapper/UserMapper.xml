@@ -4,21 +4,23 @@
 <mapper namespace="org.example.repository.UserRepository">
 
     <select id="getUserById" parameterType="Long" resultType="org.example.domain.user.User">
-        SELECT id, name, email, picture, role
+        SELECT
+            id,
+            name,
+            school_number as schoolNumber,
+            nick_name as nickName,
+            phone_number as phoneNumber,
+            gender,
+            email,
+            picture
         FROM USER
         WHERE id = #{id}
     </select>
 
-    <select id="getUserByEmail" parameterType="String" resultType="org.example.domain.user.User">
-        SELECT id, name, email, picture, role
-        FROM USER
-        WHERE email = #{email}
-    </select>
-
     <insert id="create" parameterType="org.example.domain.user.User">
         INSERT INTO USER
-            (name, email, picture, role)
-        VALUES (#{name}, #{email}, #{picture}, #{role});
+            (name, password, school_number, nick_name, phone_number)
+        VALUES (#{name}, #{password}, #{schoolNumber}, #{nickName}, #{phoneNumber});
     </insert>
 
     <delete id="delete" parameterType="org.example.domain.user.User">
@@ -26,5 +28,12 @@
         FROM USER
         WHERE id = #{id}
     </delete>
+
+    <update id="update" parameterType="org.example.domain.user.User">
+        UPDATE USER
+        SET name = #{name},
+            nick_name = #{nickName}
+        WHERE id = #{id}
+    </update>
 
 </mapper>

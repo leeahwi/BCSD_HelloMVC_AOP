@@ -4,6 +4,7 @@ import org.example.domain.BaseTimeEntity;
 
 @Builder
 @AllArgsConstructor
+@NoArgsConstructor
 @Getter
 public class User extends BaseTimeEntity {
 
@@ -19,11 +20,11 @@ public class User extends BaseTimeEntity {
     private String gender;
     private String email;
     private String picture;
-    private Role role;
+    private Role role = Role.GUEST;
 
-    public User update(String name, String picture){
+    public User update(String name, String nickName){
         this.name = name;
-        this.picture = picture;
+        this.nickName = nickName;
         return this;
     }
 
