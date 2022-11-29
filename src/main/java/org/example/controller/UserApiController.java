@@ -1,13 +1,9 @@
 package org.example.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.example.dto.posts.PostsResponseDto;
-import org.example.dto.posts.PostsSaveRequestDto;
-import org.example.dto.posts.PostsUpdateRequestDto;
 import org.example.dto.user.UserResponseDto;
 import org.example.dto.user.UserSaveRequestDto;
 import org.example.dto.user.UserUpdateRequestDto;
-import org.example.service.PostsService;
 import org.example.service.UserService;
 import org.springframework.web.bind.annotation.*;
 

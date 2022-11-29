@@ -4,8 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.example.domain.posts.Posts;
-import org.example.domain.user.Role;
 import org.example.domain.user.User;
 
 @Getter

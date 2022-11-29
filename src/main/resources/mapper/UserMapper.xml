@@ -5,14 +5,11 @@
 
     <select id="getUserById" parameterType="Long" resultType="org.example.domain.user.User">
         SELECT
-            id,
-            name,
+            id,name,
             school_number as schoolNumber,
             nick_name as nickName,
             phone_number as phoneNumber,
-            gender,
-            email,
-            picture
+            gender, email,picture
         FROM USER
         WHERE id = #{id}
     </select>

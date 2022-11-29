@@ -1,17 +1,17 @@
 package org.example.dto.posts;
 
 import lombok.Getter;
-import org.example.domain.posts.Posts;
+import org.example.domain.posts.Post;
 
 @Getter
-public class PostsResponseDto {
+public class PostResponseDto {
 
     private Long id;
     private String title;
     private String content;
     private String author;
 
-    public PostsResponseDto(Posts entity){
+    public PostResponseDto(Post entity){
         this.id = entity.getId();
         this.title = entity.getTitle();
         this.content = entity.getContent();

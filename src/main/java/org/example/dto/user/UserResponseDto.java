@@ -1,7 +1,6 @@
 package org.example.dto.user;
 
 import lombok.Getter;
-import org.example.domain.posts.Posts;
 import org.example.domain.user.Role;
 import org.example.domain.user.User;
 

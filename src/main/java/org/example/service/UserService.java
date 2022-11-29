@@ -1,12 +1,7 @@
 package org.example.service;
 
 import lombok.AllArgsConstructor;
-import org.example.domain.posts.Posts;
 import org.example.domain.user.User;
-import org.example.dto.posts.PostsListResponseDto;
-import org.example.dto.posts.PostsResponseDto;
-import org.example.dto.posts.PostsSaveRequestDto;
-import org.example.dto.posts.PostsUpdateRequestDto;
 import org.example.dto.user.UserListResponseDto;
 import org.example.dto.user.UserResponseDto;
 import org.example.dto.user.UserSaveRequestDto;
