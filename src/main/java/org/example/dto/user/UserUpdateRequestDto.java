@@ -7,11 +7,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class UserUpdateRequestDto {
     private String name;
-    private String nickName;
+    private String email;
+    private String user_pw;
 
-    public UserUpdateRequestDto(String name, String nickName) {
+    public UserUpdateRequestDto(String name, String email, String user_pw) {
         this.name = name;
-        this.nickName = nickName;
+        this.email = email;
+        this.user_pw = user_pw;
     }
 }
 

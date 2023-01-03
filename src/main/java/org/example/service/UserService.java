@@ -2,7 +2,6 @@ package org.example.service;
 
 import lombok.AllArgsConstructor;
 import org.example.domain.user.User;
-import org.example.dto.user.UserListResponseDto;
 import org.example.dto.user.UserResponseDto;
 import org.example.dto.user.UserSaveRequestDto;
 import org.example.dto.user.UserUpdateRequestDto;
@@ -21,29 +20,26 @@ public class UserService {
     public void save(UserSaveRequestDto requestDto){
         userRepository.create(requestDto.toEntity());
     }
-    public Long update(Long id, UserUpdateRequestDto requestDto){
-
-        User user = userRepository.getUserById(id);
-        userRepository.update(user.update(requestDto.getName(), requestDto.getNickName()));
-        //id 반환?
-        return id;
+    public void update(int uid, UserUpdateRequestDto requestDto){
+        User user = userRepository.getUserById(uid);
+        userRepository.update(user.update(requestDto.getName(), requestDto.getEmail()));
     }
-    public void delete(Long id){
-        User user  = userRepository.getUserById(id);
-
+    public void updatePW(int uid, UserUpdateRequestDto requestDto){
+        User user = userRepository.getUserById(uid);
+        userRepository.update(user.updatePw(requestDto.getUser_pw()));
+    }
+    public void delete(int uid){
+        User user  = userRepository.getUserById(uid);
         userRepository.delete(user);
     }
-
-    public UserResponseDto findById(Long id){
-        User user = userRepository.getUserById(id);
-
+    public UserResponseDto findById(int uid){
+        User user = userRepository.getUserById(uid);
         return new UserResponseDto(user);
     }
-
     @Transactional(readOnly = true)
-    public List<UserListResponseDto> findAllDesc(){
+    public List<UserResponseDto> findAllDesc(){
         return userRepository.findAllDesc().stream()
-                .map(UserListResponseDto::new)
+                .map(UserResponseDto::new)
                 .collect(Collectors.toList());
     }
 }

@@ -10,7 +10,7 @@
             nick_name as nickName,
             phone_number as phoneNumber,
             gender, email,picture
-        FROM USER
+        FROM user
         WHERE id = #{id}
     </select>
 
@@ -22,8 +22,8 @@
 
     <delete id="delete" parameterType="org.example.domain.user.User">
         DELETE
-        FROM USER
-        WHERE id = #{id}
+        FROM user
+        WHERE uid = #{id}
     </delete>
 
     <update id="update" parameterType="org.example.domain.user.User">

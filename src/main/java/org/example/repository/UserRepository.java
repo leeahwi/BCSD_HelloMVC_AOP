@@ -8,7 +8,7 @@ import java.util.List;
 @Repository
 public interface UserRepository {
 
-    User getUserById(Long id);
+    User getUserById(int id);
 
     void create(User user);
 
@@ -17,6 +17,4 @@ public interface UserRepository {
     void update(User user);
 
     List<User> findAllDesc();
-
-
 }

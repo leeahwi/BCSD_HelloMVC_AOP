@@ -11,21 +11,20 @@ import org.example.domain.user.User;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserSaveRequestDto {
-    private Long id;
+    private int uid;
     private String name;
-    private String password;
-    private Long schoolNumber;
-    private String nickName;
-    private String phoneNumber;
+    private String email;
+
+    private String user_id;
+    private String user_pw;
 
     public User toEntity(){
         return User.builder()
-                .id(id)
+                .uid(uid)
                 .name(name)
-                .password(password)
-                .schoolNumber(schoolNumber)
-                .nickName(nickName)
-                .phoneNumber(phoneNumber)
+                .email(email)
+                .user_id(user_id)
+                .user_pw(user_pw)
                 .build();
     }
 }
