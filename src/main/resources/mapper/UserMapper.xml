@@ -3,34 +3,35 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.example.repository.UserRepository">
 
-    <select id="getUserById" parameterType="Long" resultType="org.example.domain.user.User">
+    <select id="getUserById" parameterType="int" resultType="org.example.domain.user.User">
         SELECT
-            id,name,
-            school_number as schoolNumber,
-            nick_name as nickName,
-            phone_number as phoneNumber,
-            gender, email,picture
+            uid, name, email, user_id, user_pw, user_team_id
         FROM user
-        WHERE id = #{id}
+        WHERE uid = #{uid}
     </select>
 
     <insert id="create" parameterType="org.example.domain.user.User">
-        INSERT INTO USER
-            (name, password, school_number, nick_name, phone_number)
-        VALUES (#{name}, #{password}, #{schoolNumber}, #{nickName}, #{phoneNumber});
+        INSERT INTO user
+            (name, email, user_id, user_pw, user_team_id)
+        VALUES (#{name}, #{email}, #{user_id}, #{user_pw}, #{user_team_id});
     </insert>
 
     <delete id="delete" parameterType="org.example.domain.user.User">
         DELETE
         FROM user
-        WHERE uid = #{id}
+        WHERE uid = #{uid}
     </delete>
 
     <update id="update" parameterType="org.example.domain.user.User">
-        UPDATE USER
-        SET name = #{name},
-            nick_name = #{nickName}
-        WHERE id = #{id}
+        UPDATE user
+        SET name = #{name}
+        WHERE uid = #{uid}
+    </update>
+
+    <update id="updatePW" parameterType="org.example.domain.user.User">
+        UPDATE user
+        SET user_pw = #{user_pw}
+        WHERE uid = #{uid}
     </update>
 
 </mapper>

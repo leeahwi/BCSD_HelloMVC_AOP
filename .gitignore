@@ -1,3 +1,6 @@
 # Project exclude paths
 /src/main/resources/mybatis/config.properties
+/src/main/resources/mybatis/application-oauth.properties
 /target/
+
+.idea
